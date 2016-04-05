@@ -16,11 +16,38 @@ var _ = { };
   // Return an array of the first n elements of an array. If n is undefined,
   // return just the first element.
   _.first = function(array, n) {
+    var newArr = [];
+    if (n > 0) {
+      for (var i = 0; i < n; i++) {
+        if (array[i] !== undefined) {
+          newArr.push(array[i]);
+        }
+      }
+      return newArr;
+    }
+    else {
+      return array[0];
+    }
   };
 
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
+    var newArr = [];
+    if (n > 0 && n < array.length) {
+      for (var i = array.length - n; i <= array.length; i++) {
+        if (array[i] !== undefined) {
+          newArr.push(array[i]);
+        }
+      }
+      return newArr;
+    }
+    else if (n > array.length) {
+      return array;
+    }
+    else {
+      return array[array.length - 1];
+    }
   };
 
   // Call iterator(value, key, collection) for each element of collection.
@@ -35,6 +62,12 @@ var _ = { };
 
   // Return all elements of an array that pass a truth test ('iterator' function argument)
   _.filter = function(collection, iterator) {
+    var newArr = [];
+    for (var i = 0; i < collection.length; i++) {
+      if (iterator) {
+
+      }
+    }
   };
 
   // Return all elements of an array that don't pass a truth test (the 'iterator' function argument)
